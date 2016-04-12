@@ -1,7 +1,7 @@
 import UIKit
 import CoreBluetooth
 
-var bluetooth = Bluetooth()
+public var bluetooth = Bluetooth()
 
 public protocol BluetoothDelegate {
 
@@ -50,7 +50,7 @@ extension Bluetooth: CBCentralManagerDelegate {
 
   public func centralManager(central: CBCentralManager, didDiscoverPeripheral peripheral: CBPeripheral, advertisementData: [String : AnyObject], RSSI: NSNumber) {
     if peripheral.name == Constants.name {
-      print("Lights found.") // Logs.
+      if log { print("Lights found.") } // Logs.
 
       manager?.stopScan()
       light = peripheral
@@ -100,7 +100,7 @@ extension Bluetooth: CBPeripheralDelegate {
     guard let characteristics = service.characteristics else { return }
 
     for characteristic in characteristics {
-      print("Characteristic found.") // Logs.
+      if log { print("Characteristic found.") } // Logs.
 
       peripheral.setNotifyValue(true, forCharacteristic: characteristic)
     }
@@ -131,7 +131,7 @@ extension Bluetooth: CBPeripheralDelegate {
 extension Bluetooth: CBPeripheralManagerDelegate {
 
   public func peripheralManagerDidStartAdvertising(peripheral: CBPeripheralManager, error: NSError?) {
-    print("Peripheral is advertising.") // Logs.
+    if log { print("Peripheral is advertising.") } // Logs.
   }
 
   public func peripheralManagerDidUpdateState(peripheral: CBPeripheralManager) {
