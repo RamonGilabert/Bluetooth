@@ -22,16 +22,17 @@ public protocol BluetoothWriteDelegate {
 public class Bluetooth: NSObject {
 
   public var log = false
+  public var delegate: BluetoothDelegate?
+  public var pairedDelegate: BluetoothPairedDelegate?
+  public var writeDelegate: BluetoothWriteDelegate?
+
   var manager: CBCentralManager?
   var peripheralManager: CBPeripheralManager?
   var characteristic: CBMutableCharacteristic?
   var service: CBMutableService?
   var light: CBPeripheral?
-  var delegate: BluetoothDelegate?
-  var pairedDelegate: BluetoothPairedDelegate?
-  var writeDelegate: BluetoothWriteDelegate?
 
-  init(central: Bool = true) {
+  public init(central: Bool = true) {
     super.init()
 
     let queue = dispatch_queue_create("no.bluetooth", DISPATCH_QUEUE_SERIAL)

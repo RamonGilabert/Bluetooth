@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		29AE624B1CBD31F0006EBCC6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 29AE62431CBD31F0006EBCC6 /* LaunchScreen.storyboard */; };
-		29AE624C1CBD31F0006EBCC6 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 29AE62451CBD31F0006EBCC6 /* Info.plist */; };
 		29AE624D1CBD31F0006EBCC6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 29AE62471CBD31F0006EBCC6 /* Assets.xcassets */; };
 		29AE624E1CBD31F0006EBCC6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29AE62491CBD31F0006EBCC6 /* AppDelegate.swift */; };
 		29AE624F1CBD31F0006EBCC6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29AE624A1CBD31F0006EBCC6 /* ViewController.swift */; };
@@ -132,7 +131,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0720;
-				LastUpgradeCheck = 0720;
+				LastUpgradeCheck = 0730;
 				ORGANIZATIONNAME = "Hyper Interaktiv AS";
 				TargetAttributes = {
 					D5C7F73F1C3BC9CE008CDDBA = {
@@ -163,7 +162,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				29AE624C1CBD31F0006EBCC6 /* Info.plist in Resources */,
 				29AE624D1CBD31F0006EBCC6 /* Assets.xcassets in Resources */,
 				29AE624B1CBD31F0006EBCC6 /* LaunchScreen.storyboard in Resources */,
 			);
