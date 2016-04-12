@@ -3,7 +3,7 @@ import CoreBluetooth
 
 public protocol BluetoothDelegate {
 
-  func bluetoothLight()
+  func didDiscoverPeripheral()
   func shouldShowMessage(message: String)
   func showPairing()
 }
@@ -65,7 +65,7 @@ extension Bluetooth: CBCentralManagerDelegate {
 
       central.connectPeripheral(peripheral, options: nil)
 
-      delegate?.bluetoothLight()
+      delegate?.didDiscoverPeripheral()
     }
   }
 
@@ -156,7 +156,6 @@ extension Bluetooth: CBPeripheralManagerDelegate {
     guard let request = requests.first else { return }
 
     peripheralManager?.stopAdvertising()
-    delegate?.showPairing()
 
     if let data = request.value,
       string = String(data: data, encoding: NSUTF8StringEncoding) {

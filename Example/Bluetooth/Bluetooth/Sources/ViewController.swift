@@ -7,6 +7,17 @@ class ViewController: UIViewController {
     super.viewDidLoad()
 
     view.backgroundColor = UIColor.whiteColor()
+
+    let bluetooth = Bluetooth(central: false)
+    bluetooth.delegate = self
   }
 }
 
+extension ViewController: BluetoothDelegate {
+
+  func didDiscoverPeripheral() {  }
+
+  func shouldShowMessage(message: String) {  }
+
+  func showPairing() {  }
+}
