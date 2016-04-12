@@ -329,7 +329,7 @@
 			baseConfigurationReference = 3F147818EB12C9210EFEC025 /* Pods-BluetoothDemo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				INFOPLIST_FILE = BluetoothDemo/Info.plist;
+				INFOPLIST_FILE = Bluetooth/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.RamonGilabert.BluetoothDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -341,7 +341,7 @@
 			baseConfigurationReference = 3F91666CAA04FC81C9A20121 /* Pods-BluetoothDemo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				INFOPLIST_FILE = BluetoothDemo/Info.plist;
+				INFOPLIST_FILE = Bluetooth/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.RamonGilabert.BluetoothDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
