@@ -7,23 +7,24 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		29AE624B1CBD31F0006EBCC6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 29AE62431CBD31F0006EBCC6 /* LaunchScreen.storyboard */; };
+		29AE624C1CBD31F0006EBCC6 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 29AE62451CBD31F0006EBCC6 /* Info.plist */; };
+		29AE624D1CBD31F0006EBCC6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 29AE62471CBD31F0006EBCC6 /* Assets.xcassets */; };
+		29AE624E1CBD31F0006EBCC6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29AE62491CBD31F0006EBCC6 /* AppDelegate.swift */; };
+		29AE624F1CBD31F0006EBCC6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29AE624A1CBD31F0006EBCC6 /* ViewController.swift */; };
 		5D10D4E6ABCE4E608882DBB3 /* Pods_BluetoothDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9402D69D0F793FAACFA459D1 /* Pods_BluetoothDemo.framework */; };
-		D5C7F74E1C3BC9CE008CDDBA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D5C7F74C1C3BC9CE008CDDBA /* LaunchScreen.storyboard */; };
-		D5C7F75B1C3BCA1E008CDDBA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D5C7F7571C3BCA1E008CDDBA /* Assets.xcassets */; };
-		D5C7F75C1C3BCA1E008CDDBA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5C7F7591C3BCA1E008CDDBA /* AppDelegate.swift */; };
-		D5C7F75D1C3BCA1E008CDDBA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5C7F75A1C3BCA1E008CDDBA /* ViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		29AE62441CBD31F0006EBCC6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		29AE62451CBD31F0006EBCC6 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		29AE62471CBD31F0006EBCC6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		29AE62491CBD31F0006EBCC6 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		29AE624A1CBD31F0006EBCC6 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		3F147818EB12C9210EFEC025 /* Pods-BluetoothDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BluetoothDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BluetoothDemo/Pods-BluetoothDemo.debug.xcconfig"; sourceTree = "<group>"; };
 		3F91666CAA04FC81C9A20121 /* Pods-BluetoothDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BluetoothDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-BluetoothDemo/Pods-BluetoothDemo.release.xcconfig"; sourceTree = "<group>"; };
 		9402D69D0F793FAACFA459D1 /* Pods_BluetoothDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BluetoothDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D5C7F7401C3BC9CE008CDDBA /* BluetoothDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BluetoothDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		D5C7F74D1C3BC9CE008CDDBA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		D5C7F74F1C3BC9CE008CDDBA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		D5C7F7571C3BCA1E008CDDBA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		D5C7F7591C3BCA1E008CDDBA /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		D5C7F75A1C3BCA1E008CDDBA /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -46,6 +47,34 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		29AE62421CBD31F0006EBCC6 /* Bluetooth */ = {
+			isa = PBXGroup;
+			children = (
+				29AE62431CBD31F0006EBCC6 /* LaunchScreen.storyboard */,
+				29AE62451CBD31F0006EBCC6 /* Info.plist */,
+				29AE62461CBD31F0006EBCC6 /* Resources */,
+				29AE62481CBD31F0006EBCC6 /* Sources */,
+			);
+			path = Bluetooth;
+			sourceTree = "<group>";
+		};
+		29AE62461CBD31F0006EBCC6 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				29AE62471CBD31F0006EBCC6 /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		29AE62481CBD31F0006EBCC6 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				29AE62491CBD31F0006EBCC6 /* AppDelegate.swift */,
+				29AE624A1CBD31F0006EBCC6 /* ViewController.swift */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
 		40780DEC0A3973C9411916F8 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -58,7 +87,7 @@
 		D5C7F7371C3BC9CE008CDDBA = {
 			isa = PBXGroup;
 			children = (
-				D5C7F7421C3BC9CE008CDDBA /* BluetoothDemo */,
+				29AE62421CBD31F0006EBCC6 /* Bluetooth */,
 				D5C7F7411C3BC9CE008CDDBA /* Products */,
 				40780DEC0A3973C9411916F8 /* Pods */,
 				1B40F50661ADB258A43C77DF /* Frameworks */,
@@ -71,42 +100,6 @@
 				D5C7F7401C3BC9CE008CDDBA /* BluetoothDemo.app */,
 			);
 			name = Products;
-			sourceTree = "<group>";
-		};
-		D5C7F7421C3BC9CE008CDDBA /* BluetoothDemo */ = {
-			isa = PBXGroup;
-			children = (
-				D5C7F7561C3BCA1E008CDDBA /* Resources */,
-				D5C7F7581C3BCA1E008CDDBA /* Sources */,
-				D5C7F7551C3BC9EA008CDDBA /* Supporting Files */,
-			);
-			path = BluetoothDemo;
-			sourceTree = "<group>";
-		};
-		D5C7F7551C3BC9EA008CDDBA /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				D5C7F74C1C3BC9CE008CDDBA /* LaunchScreen.storyboard */,
-				D5C7F74F1C3BC9CE008CDDBA /* Info.plist */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		D5C7F7561C3BCA1E008CDDBA /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-				D5C7F7571C3BCA1E008CDDBA /* Assets.xcassets */,
-			);
-			path = Resources;
-			sourceTree = "<group>";
-		};
-		D5C7F7581C3BCA1E008CDDBA /* Sources */ = {
-			isa = PBXGroup;
-			children = (
-				D5C7F7591C3BCA1E008CDDBA /* AppDelegate.swift */,
-				D5C7F75A1C3BCA1E008CDDBA /* ViewController.swift */,
-			);
-			path = Sources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -170,8 +163,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D5C7F75B1C3BCA1E008CDDBA /* Assets.xcassets in Resources */,
-				D5C7F74E1C3BC9CE008CDDBA /* LaunchScreen.storyboard in Resources */,
+				29AE624C1CBD31F0006EBCC6 /* Info.plist in Resources */,
+				29AE624D1CBD31F0006EBCC6 /* Assets.xcassets in Resources */,
+				29AE624B1CBD31F0006EBCC6 /* LaunchScreen.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -230,18 +224,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D5C7F75D1C3BCA1E008CDDBA /* ViewController.swift in Sources */,
-				D5C7F75C1C3BCA1E008CDDBA /* AppDelegate.swift in Sources */,
+				29AE624F1CBD31F0006EBCC6 /* ViewController.swift in Sources */,
+				29AE624E1CBD31F0006EBCC6 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		D5C7F74C1C3BC9CE008CDDBA /* LaunchScreen.storyboard */ = {
+		29AE62431CBD31F0006EBCC6 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				D5C7F74D1C3BC9CE008CDDBA /* Base */,
+				29AE62441CBD31F0006EBCC6 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
