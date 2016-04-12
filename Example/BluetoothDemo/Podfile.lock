@@ -1,0 +1,16 @@
+PODS:
+  - Bluetooth (0.1.0)
+
+DEPENDENCIES:
+  - Bluetooth (from `../../`)
+
+EXTERNAL SOURCES:
+  Bluetooth:
+    :path: ../../
+
+SPEC CHECKSUMS:
+  Bluetooth: 11644076e36d67bd90fbca12cfa299c06fc3bd99
+
+PODFILE CHECKSUM: 8ab0adb6216f52a6c366718b804e444c7e8c7c4a
+
+COCOAPODS: 1.0.0.beta.6
