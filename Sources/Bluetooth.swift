@@ -3,32 +3,21 @@ import CoreBluetooth
 
 var bluetooth = Bluetooth()
 
-protocol BluetoothDelegate {
+public protocol BluetoothDelegate {
 
   func bluetoothLight()
   func shouldShowMessage(message: String)
   func showPairing()
 }
 
-protocol BluetoothPairedDelegate {
+public protocol BluetoothPairedDelegate {
 
   func pairedDevice()
 }
 
-class Bluetooth: NSObject {
+public class Bluetooth: NSObject {
 
-  struct Constants {
-    static let name = "raspberrypi"
-    static let peripheral = "E20A39F4-73F5-4BC4-A12F-17D1AD07A951"
-    static let service = "E20A39F4-73F5-4BC4-A12F-17D1AD07A961"
-    static let characteristic = "08590F7E-DB05-467E-8757-72F6FAEB13D4"
-    static let advertiser = "7DAB9750-4510-410C-B030-D5597D3EBE6D"
-    static let information = [
-      CBAdvertisementDataLocalNameKey : "Lights",
-      CBAdvertisementDataServiceUUIDsKey : [CBUUID(string: Constants.peripheral)]
-    ]
-  }
-
+  public var log = false
   var manager: CBCentralManager?
   var peripheralManager: CBPeripheralManager?
   var characteristic: CBMutableCharacteristic?
@@ -59,7 +48,7 @@ class Bluetooth: NSObject {
 
 extension Bluetooth: CBCentralManagerDelegate {
 
-  func centralManager(central: CBCentralManager, didDiscoverPeripheral peripheral: CBPeripheral, advertisementData: [String : AnyObject], RSSI: NSNumber) {
+  public func centralManager(central: CBCentralManager, didDiscoverPeripheral peripheral: CBPeripheral, advertisementData: [String : AnyObject], RSSI: NSNumber) {
     if peripheral.name == Constants.name {
       print("Lights found.") // Logs.
 
@@ -72,21 +61,21 @@ extension Bluetooth: CBCentralManagerDelegate {
     }
   }
 
-  func centralManager(central: CBCentralManager, didConnectPeripheral peripheral: CBPeripheral) {
+  public func centralManager(central: CBCentralManager, didConnectPeripheral peripheral: CBPeripheral) {
     light = peripheral
 
     peripheral.delegate = self
     peripheral.discoverServices([CBUUID(string: Constants.service)])
   }
 
-  func centralManagerDidUpdateState(central: CBCentralManager) {
+  public func centralManagerDidUpdateState(central: CBCentralManager) {
     var message = ""
 
     switch central.state {
     case .Unauthorized:
       message = Text.Error.unauthorized
     case .PoweredOff:
-      message = Text.Error.powered
+      message = Text.Error.poweredOff
     case .PoweredOn:
       scan(); return
     default:
@@ -99,7 +88,7 @@ extension Bluetooth: CBCentralManagerDelegate {
 
 extension Bluetooth: CBPeripheralDelegate {
 
-  func peripheral(peripheral: CBPeripheral, didDiscoverServices error: NSError?) {
+  public func peripheral(peripheral: CBPeripheral, didDiscoverServices error: NSError?) {
     guard let services = peripheral.services else { return }
 
     for service in services {
@@ -107,7 +96,7 @@ extension Bluetooth: CBPeripheralDelegate {
     }
   }
 
-  func peripheral(peripheral: CBPeripheral, didDiscoverCharacteristicsForService service: CBService, error: NSError?) {
+  public func peripheral(peripheral: CBPeripheral, didDiscoverCharacteristicsForService service: CBService, error: NSError?) {
     guard let characteristics = service.characteristics else { return }
 
     for characteristic in characteristics {
@@ -117,7 +106,7 @@ extension Bluetooth: CBPeripheralDelegate {
     }
   }
 
-  func peripheral(peripheral: CBPeripheral, didUpdateValueForCharacteristic characteristic: CBCharacteristic, error: NSError?) {
+  public func peripheral(peripheral: CBPeripheral, didUpdateValueForCharacteristic characteristic: CBCharacteristic, error: NSError?) {
     if let data = characteristic.value,
       string = String(data: data, encoding: NSUTF8StringEncoding) {
 
@@ -141,11 +130,11 @@ extension Bluetooth: CBPeripheralDelegate {
 
 extension Bluetooth: CBPeripheralManagerDelegate {
 
-  func peripheralManagerDidStartAdvertising(peripheral: CBPeripheralManager, error: NSError?) {
+  public func peripheralManagerDidStartAdvertising(peripheral: CBPeripheralManager, error: NSError?) {
     print("Peripheral is advertising.") // Logs.
   }
 
-  func peripheralManagerDidUpdateState(peripheral: CBPeripheralManager) {
+  public func peripheralManagerDidUpdateState(peripheral: CBPeripheralManager) {
     guard peripheral.state == .PoweredOn else { return }
 
     service = CBMutableService(type: CBUUID(string: Constants.service), primary: true)
@@ -162,7 +151,7 @@ extension Bluetooth: CBPeripheralManagerDelegate {
     advertise()
   }
 
-  func peripheralManager(peripheral: CBPeripheralManager, didReceiveWriteRequests requests: [CBATTRequest]) {
+  public func peripheralManager(peripheral: CBPeripheralManager, didReceiveWriteRequests requests: [CBATTRequest]) {
     guard let request = requests.first else { return }
 
     peripheralManager?.stopAdvertising()
