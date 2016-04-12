@@ -1,8 +1,6 @@
 import UIKit
 import CoreBluetooth
 
-public var bluetooth = Bluetooth()
-
 public protocol BluetoothDelegate {
 
   func bluetoothLight()
@@ -13,6 +11,12 @@ public protocol BluetoothDelegate {
 public protocol BluetoothPairedDelegate {
 
   func pairedDevice()
+  func characteristicFound(string: String)
+}
+
+public protocol BluetoothWriteDelegate {
+
+  func receivedWrite(string: String)
 }
 
 public class Bluetooth: NSObject {
@@ -25,14 +29,18 @@ public class Bluetooth: NSObject {
   var light: CBPeripheral?
   var delegate: BluetoothDelegate?
   var pairedDelegate: BluetoothPairedDelegate?
+  var writeDelegate: BluetoothWriteDelegate?
 
-  override init() {
+  init(central: Bool = true) {
     super.init()
 
     let queue = dispatch_queue_create("no.bluetooth", DISPATCH_QUEUE_SERIAL)
 
-    // manager = CBCentralManager(delegate: self, queue: queue) // TODO: Implement that when being a central manager.
-    peripheralManager = CBPeripheralManager(delegate: self, queue: queue)
+    if central {
+      manager = CBCentralManager(delegate: self, queue: queue)
+    } else {
+      peripheralManager = CBPeripheralManager(delegate: self, queue: queue)
+    }
   }
 
   func scan() {
@@ -110,14 +118,7 @@ extension Bluetooth: CBPeripheralDelegate {
     if let data = characteristic.value,
       string = String(data: data, encoding: NSUTF8StringEncoding) {
 
-      let controllerID = string.characters[string.endIndex.predecessor()]
-      let token = string.substringToIndex(string.endIndex.predecessor())
-
-      if let controllerID = Int(String(controllerID)) {
-        Locker.controller(controllerID)
-      }
-
-      Locker.token(token)
+      pairedDelegate?.characteristicFound(string)
 
       manager?.cancelPeripheralConnection(peripheral)
       light = nil
@@ -160,20 +161,7 @@ extension Bluetooth: CBPeripheralManagerDelegate {
     if let data = request.value,
       string = String(data: data, encoding: NSUTF8StringEncoding) {
 
-      let substrings = string.componentsSeparatedByString(" ")
-
-      if let string = substrings.last, controllerID = Int(string) {
-        Locker.controller(controllerID)
-      }
-
-      if let token = substrings.first {
-        Locker.token(token)
-      }
-      
-      light = nil
-      manager = nil
-      
-      delay(2.5) { self.pairedDelegate?.pairedDevice() }
+      writeDelegate?.receivedWrite(string)
     }
   }
 }
