@@ -84,13 +84,13 @@ extension Bluetooth: CBCentralManagerDelegate {
 
     switch central.state {
     case .Unauthorized:
-      message = Text.Bluetooth.unauthorized
+      message = Text.Error.unauthorized
     case .PoweredOff:
-      message = Text.Bluetooth.powered
+      message = Text.Error.powered
     case .PoweredOn:
       scan(); return
     default:
-      message = Text.Bluetooth.unknown
+      message = Text.Error.unknown
     }
 
     delegate?.shouldShowMessage(message)
