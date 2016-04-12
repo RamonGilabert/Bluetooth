@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = "Bluetooth"
-  s.summary          = "A short description of Bluetooth."
+  s.summary          = "You need to be careful with a Bluetooth headset. Because some guys look crazy with them."
   s.version          = "0.1.0"
   s.homepage         = "https://github.com/RamonGilabert/Bluetooth"
   s.license          = 'MIT'
@@ -15,11 +15,5 @@ Pod::Spec.new do |s|
   s.osx.deployment_target = '10.9'
 
   s.requires_arc = true
-  s.ios.source_files = 'Sources/{iOS,Shared}/**/*'
-  s.osx.source_files = 'Sources/{Mac,Shared}/**/*'
-
-  # s.ios.frameworks = 'UIKit', 'Foundation'
-  # s.osx.frameworks = 'Cocoa', 'Foundation'
-
-  # s.dependency 'Whisper', '~> 1.0'
+  s.ios.source_files = 'Sources/**/*'
 end
